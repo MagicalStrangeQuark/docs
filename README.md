@@ -40,6 +40,16 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
    🪔 `To test the use of API's and other features within our application, it is recommended to use a tool to perform the request simulation.`
 
+## Starting a new Laravel project
+
+### 🐉 Create a new project
+
+    `composer create-project --prefer-dist laravel/laravel some-project-name`
+
+### 🐲 Installation of project dependencies
+
+    `composer install`
+
 ## Visual Studio Code Extensions
 
 🦝 <a href="https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv">🌖 DotENV 🌘</a>
@@ -49,3 +59,35 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 🦝 <a href="https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade">🌾 Laravel Blade Snippets 🌚 </a>
 
 🦝 <a href="https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client">💫 PHP Intelephense 🌻</a>
+
+## TODO - V1.0.0
+
+👹 `Implementar a rotina de alteração de senha dentro do sistema.`
+
+👹 `Implementar a rotina de restauração de senha através do e-mail cadastrado no usuário.`
+
+👹 `Realizar o upload de imagens para o usuário, exibindo-a ao lado do nome.`
+
+👹 `Realizar o cadastro de n imagens para um determinado produto.`
+
+👹 `Na listagem, criar um carousel para exibição das imagens para um determinado produto.`
+
+👹 `Desenvolver o cadastro dos locais de estoque.`
+
+👹 `Desenvolver as regras para entrada / saída de itens dentro do sistema.`
+
+👹 `Desenvolver a lógica de quantidade do produto por local de estoque.`
+
+👹 `Realizar a exportação de XML e CSV para os módulos que possuam CSV.`
+
+👹 `Criar o módulo Order, assim como o vínculo de n produtos para o mesmo.`
+
+👹 `Criar o módulo forma de pagamento.`
+
+👹 `Realizar o pagamento desse pedido.`
+
+👹 `Criar os testes para todo o sistema.`
+
+👹 `Documentar o sistema no estado atual.`
+
+👹 `Lançar a primeira versão do sistema.`
