@@ -1,0 +1,77 @@
+*****************************************************************************************************************************************************************************
+*                                                                                  ESTOQUE                                                                                  *
+*****************************************************************************************************************************************************************************
+
+--> TEORIA:
+
+    --> A ACUMULAÇÃO DE ESTOQUES EM NÍVEIS ADEQUADOS É UMA NECESSIDADE PARA O NORMAL FUNCIONAMENTO DO SISTEMA PRODUTIVO;
+
+    --> A TENDÊNCIA ATUAL É DA TENTATIVA DE SE REDUZIR AO MÁXIMO OS NÍVEIS DE ESTOQUES NAS EMPRESAS;
+
+    --> CADA TIPO DE MATERIAL ESTOCADO APRESENTAM COMPORTAMENTOS PRÓPRIOS E SOFREM INFLUÊNCIAS DIFERENTES;
+
+    --> HÁ DIVERSOS TIPOS DE ESTOQUE E VARIADAS CLASSIFICAÇÕES;
+
+--> FUNÇÃO DOS ESTOQUES:
+
+    --> GARANTIR O ABASTECIMENTO DE MATERIAIS À EMPRESA, NEUTRALIZANDO OS EFEITOS DE:
+        
+        --> DEMORA OU ATRASO NO FORNECIMENTO DE MATERIAIS;
+            
+        --> SAZONALIDADE NO SUPRIMENTO;
+            
+        --> RISCOS DE DIFICULDADE NO FORNECIMENTO;
+        
+    --> PROPORCIONAR ECONOMIA DE ESCALA:
+        
+        --> POR MEIO DA COMPRA OU PRODUÇÃO EM LOTES ECONÔMICOS;
+            
+        --> PELA FLEXIBILIDADE DO PROCESSO PRODUTIVO;
+            
+        --> RAPIDEZ E EFICIÊNCIA NO ATENDIMENTO ÀS NECESSIDADES;
+
+--> CUSTOS DOS ESTOQUES:
+
+    --> AQUISIÇÃO (CUSTO DO PEDIDO);
+    
+        --> SÃO TODOS OS CUSTOS ENVOLVIDOS NO PROCESSO DE EMISSÃO DE UM PEDIDO DE COMPRA, ESTANDO DIRETAMENTE RELACIONADO AO VOLUME DE REQUISIÇÕES OU PEDIDOS EM UM DETERMINADO PERÍODO;
+    
+    --> MÃO DE OBRA (CUSTO COM PESSOAL);
+    
+        --> SÃO AS DESPESAS RELACIIONADAS AO ARMAZENAMENTO (ESPAÇO FÍSIC, PESSOAL ENVOLVIDO, EQUIPAMENTOS, SISTEMAS DE ARMAZENAGEM, SEGUROS, PERDAS, ROUBOS, FURTOS, OBSOLESCÊNCIA, IMPOSTOS);
+    
+    --> CUSTO DE ARMAZENAGEM (ESTOCAGEM) OU MANUTENÇÃO DO ESTOQUE;
+    
+    --> SEGUROS E SISTEMA DE SEGURANÇA;
+    
+    --> ROUBOS, FURTOS E QUEBRAS;
+    
+    --> OBSOLESCÊNCIA;
+    
+    --> CUSTO DE OPORTUNIDADE;
+    
+    --> CUSTO DE FALTA DE ESTOQUE (RUPTURA);
+    
+        --> LUCROS CESSANTES;
+        
+        --> COMPRAS EMERGENCIAIS;
+        
+        --> NÃO CUMPRIMENTOS DE PRAZOS CONTRATUAIS (MULTAS E QUEBRA DE CONTRATO);
+        
+        --> PERDA DE CLIENTES;
+        
+        --> DEPRECIAÇÃO DA IMAGEM DA EMPRESA;
+        
+        --> FUNCIONÁRIOS E EQUIPAMENTOS SUBUTILIZADOS;
+        
+--> LOGÍSTICA DE DISTRIBUIÇÃO:
+
+                                        <=   FLUXO DE INFORMAÇÕES   =>
+
+          -----------<--------------------<---------------------<----------------<-----------
+          ^                    ^                     ^                   ^                  ^
+    [ FORNECEDOR ]       [ INDÚSTRIA ]       [ DISTRIBUIÇÃO ]       [ VAREJO ]       [ CONSUMIDOR ]
+         \-/                  \-/                   \-/                 \-/                \-/
+          ----------->-------------------->--------------------->---------------->-----------
+        
+                                       FLUXO FINANCEIRO E DE INFORMAÇÃO

@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/laravel-logo.png" width="400"></p>
 
 Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel framework 👈</a>, developing an ecommerce platform.
 
@@ -60,7 +60,39 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
 🦝 <a href="https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client">💫 PHP Intelephense 🌻</a>
 
-## TODO - V1.0.0
+## Run the project from the current project
+
+> `git clone https://github.com/MagicalStrangeQuark/ecommerce-laravel.git`
+
+## Create and configure the database (MariaDB)
+
+> `CREATE DATABASE laravel`
+
+> `CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'P@ssw0rd'`
+
+> `GRANT ALL PRIVILEGES ON * . * TO 'laravel'@'localhost'`
+
+> `FLUSH PRIVILEGES`
+
+### Configure the .env file
+
+> `cd ecommerce-laravel && cp .env.example .env && php artisan key:generate`
+
+> `php artisan config:clear && php artisan cache:clear && php artisan config:cache`
+
+> `composer install && composer update`
+
+> `npm install && npm audit fix && npm run watch`
+
+> `sudo systemctl start mariadb`
+
+> `php artisan migrate:fresh --seed`
+
+### Run `php artisan serve` inside `ecommerce-laravel` directory
+
+### Open the link <http://127.0.0.1:8000>
+
+## TODO - Version 1.0
 
 👹 `Implementar a rotina de alteração de senha dentro do sistema.`
 

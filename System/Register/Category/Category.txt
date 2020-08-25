@@ -7,3 +7,5 @@
     ---------------------
     -    1   -  XXXXX   -
     ---------------------
+    
+    * THE LIST OF CATEGORIES WAS OBTAINED FROM THE FOLLOWING REFERENCE: <https://www.researchandmarkets.com/categories>
