@@ -317,6 +317,70 @@ Excluir um registro de id igual a 3 com SoftDelete
 
     Color::find(5)->forceDelete();
 
+<h2>Views</h2>
+
+<h3>Blade</h3>
+
+<h4>Condicional</h4>
+
+```
+    @if
+        <code>
+    @else
+        <code>
+    @endif
+```
+
+<h4>Foreach</h4>
+
+```
+    @foreach
+        <code>
+    @endforeach
+```
+
+O framework disponibiliza um objeto chamado $loop, que possibilita obter o primeiro e último elemento do laço de repetição.
+ 
+Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
+
+<h3>For</h3>
+
+```
+    @for
+        <code>
+    @endfor
+```
+
+<h4>Vazio</h4>
+
+```
+    @empty
+        <code>
+    @endempty
+```
+
+<h3>Section</h3>
+
+<h4>Passagem de variáveis como parâmetro</h4>
+
+```
+    @yield('variable')
+
+    @section('<variable>', '<string>')
+```
+
+<h4>Passagem de um trecho de código HTML como parâmetro</h4>
+
+```
+    @yield('<string>')
+
+    @section('<string>')
+
+        <html-code-here>
+
+    @endsection('<string>')
+```
+
 ## TODO - Version 1.0
 
 👹 `Implementar a rotina de alteração de senha dentro do sistema.`
