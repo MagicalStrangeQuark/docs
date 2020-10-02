@@ -142,6 +142,20 @@ Para utilização de mensagens não genéricas, pode-se usar uma chave com o nom
 
 Para criação de mensagens abaixo do campo com erro / sucesso, o Laravel possui, dentro do objeto $errors, um método chamado `has()`, em que é passado o name, sendo retornado um booleano indicando se aquele campo contém erros.
 
+<h2>Helpers</h2>
+
+Para realizar a criação de um arquivo helper, criaremos um arquivo chamado `Html.php`, dentro do diretório `app/Helpers`.
+
+No arquivo `composer.json`, inserir o código abaixo dentro da chave autoload e rodar o comando `composer dump-autoload`.
+
+```
+    "files": [
+        "app/Helpers/Html.php"
+    ]
+```
+
+Adicionar, no diretório config, no arquivo app.php, em aliases, a linha `'Helper' => App\Helpers\Helper::class`
+
 ## TODO - Version 1.0
 
 👹 `Implementar a rotina de alteração de senha dentro do sistema.`
