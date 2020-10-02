@@ -88,9 +88,59 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
 > `php artisan migrate:fresh --seed`
 
-### Run `php artisan serve` inside `ecommerce-laravel` directory
+<h4>Run `php artisan serve` inside `ecommerce-laravel` directory<h4>
 
-### Open the link <http://127.0.0.1:8000>
+<h4>Open the link <http://127.0.0.1:8000></h4>
+
+## Form Validation
+
+No objeto request é possível acessar o método validate, bastando inserir um array associativo com a chave contendo o name do campo e o valor required, sendo
+validado se existe conteúdo. No exemplo abaixo, estamos verificando se o campo color foi informado:
+
+```
+    $request->validate([
+        "color" => "required"
+    ]);
+```
+
+Para inserir mais validações simultaneamente, basta concatenar usando o pipe. No exemplo abaixo, não queremos mais de 10 caracteres no mesmo campo color.
+
+```
+    $request->validate([
+        "color" => "required|max:10"
+    ]);
+```
+
+Para validação única, basta informar `unique:<nome-da-tabela>`, para o campo desejado, o seguinte exemplo pode ser útil:
+
+```
+    $request->validate([
+        "color" => "required|unique:colors",
+        "hexadecimal" => "required|min:6|max:6|unique:colors,hexadecimal"
+    ]);
+```
+
+Exemplo de validação de email:
+
+```
+    $request->validate([
+        "email" => "required|email",
+    ]);
+```
+
+Para utilização de mensagens não genéricas, pode-se usar uma chave com o nome da validação, com a mensagem, sendo passsado o placeholder `:attribute`. Exemplo:
+
+```
+    $request->validate([
+            "color" => "required|unique:colors",
+            "hexadecimal" => "required|min:6|max:6|unique:colors"
+        ],[
+            "hexadecimal.min" => "O hexadecimal deve conter seis caracteres",
+            "unique" => "O atributo :attribute deve ser único"
+    ]);
+```
+
+Para criação de mensagens abaixo do campo com erro / sucesso, o Laravel possui, dentro do objeto $errors, um método chamado `has()`, em que é passado o name, sendo retornado um booleano indicando se aquele campo contém erros.
 
 ## TODO - Version 1.0
 
