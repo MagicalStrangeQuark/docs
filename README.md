@@ -1,6 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/laravel-logo.png" width="400"></p>
 
-Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel framework 👈</a>, developing an ecommerce platform.
+<p align="center">Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel framework 👈</a>, developing an ecommerce platform.</p>
 
 <p align="center">
     <a href="#">
@@ -20,7 +20,7 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
     </a>
 </p>
 
-## Configuring the machine to start the application
+<h2 align="center">Configuring the machine to start the application</h2>
 
 🔏 Installing Apache
 
@@ -40,17 +40,21 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
    🪔 `To test the use of API's and other features within our application, it is recommended to use a tool to perform the request simulation.`
 
-## Starting a new Laravel project
+<h2 align="center">Starting a new Laravel project</h2>
 
-### 🐉 Create a new project
+<h3 align="center">🐉 Create a new project</h3>
 
-    `composer create-project --prefer-dist laravel/laravel some-project-name`
+```bash
+    composer create-project --prefer-dist laravel/laravel some-project-name
+```
 
-### 🐲 Installation of project dependencies
+<h3 align="center">🐲 Installation of project dependencies</h3
 
-    `composer install`
+```bash
+    composer install
+```
 
-## Visual Studio Code Extensions
+<h2 align="center">Visual Studio Code Extensions</h2>
 
 🦝 <a href="https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv">🌖 DotENV 🌘</a>
 
@@ -60,11 +64,11 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
 🦝 <a href="https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client">💫 PHP Intelephense 🌻</a>
 
-## Run the project from the current project
+<h2 align="center">Run the project from the current project</h2>
 
 > `git clone https://github.com/MagicalStrangeQuark/ecommerce-laravel.git`
 
-## Create and configure the database (MariaDB)
+<h2 align="center">Create and configure the database (MariaDB)</h2>
 
 > `CREATE DATABASE laravel`
 
@@ -74,7 +78,7 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
 > `FLUSH PRIVILEGES`
 
-### Configure the .env file
+<h3 align="center">Configure the .env file
 
 > `cd ecommerce-laravel && cp .env.example .env && php artisan key:generate`
 
@@ -92,7 +96,7 @@ Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel
 
 <h4>Open the link <http://127.0.0.1:8000></h4>
 
-## Form Validation
+<h2 align="center">Form Validation</h2>
 
 No objeto request é possível acessar o método validate, bastando inserir um array associativo com a chave contendo o name do campo e o valor required, sendo
 validado se existe conteúdo. No exemplo abaixo, estamos verificando se o campo color foi informado:
@@ -391,7 +395,7 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
     bugfix/102032-some-bugfix-message
 ```
 
-## TODO - Version 1.0
+<h2 align="center">TODO - Version 1.0</h2>
 
 👹 `Implementar a rotina de alteração de senha dentro do sistema.`
 
