@@ -115,6 +115,10 @@
 ```
 
 ```bash
+    php artisan storage:link
+```
+
+```bash
     php artisan serve
 ```
 
@@ -407,6 +411,12 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
         <html-code-here>
 
     @endsection('<string>')
+```
+
+<h3 align="center">Realizar o link do diretório storage/app/public em public</h3>
+
+```bash
+    php artisan storage:link
 ```
 
 <h2 align="center">GIT</h2>
