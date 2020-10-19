@@ -66,35 +66,61 @@
 
 <h2 align="center">Run the project from the current project</h2>
 
-> `git clone https://github.com/MagicalStrangeQuark/ecommerce-laravel.git`
+```
+    git clone https://github.com/MagicalStrangeQuark/ecommerce-laravel.git
+```
 
 <h2 align="center">Create and configure the database (MariaDB)</h2>
 
-> `CREATE DATABASE laravel`
+```bash
+    CREATE DATABASE laravel
+```
 
-> `CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'P@ssw0rd'`
+```bash
+    CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'P@ssw0rd'
+```
 
-> `GRANT ALL PRIVILEGES ON * . * TO 'laravel'@'localhost'`
+```bash
+    GRANT ALL PRIVILEGES ON * . * TO 'laravel'@'localhost'
+```
 
-> `FLUSH PRIVILEGES`
+```bash
+    FLUSH PRIVILEGES
+```
 
-<h3 align="center">Configure the .env file
+<h3 align="center">Configure the .env file</h3>
 
-> `cd ecommerce-laravel && cp .env.example .env && php artisan key:generate`
+```bash
+    cd ecommerce-laravel && cp .env.example .env && php artisan key:generate`
+```
 
-> `php artisan config:clear && php artisan cache:clear && php artisan config:cache`
+```bash
+    php artisan config:clear && php artisan cache:clear && php artisan config:cache
+```
 
-> `composer install && composer update`
+```bash
+    composer install && composer update
+```
 
-> `npm install && npm audit fix && npm run watch`
+```bash
+    npm install && npm audit fix && npm run watch
+```
 
-> `sudo systemctl start mariadb`
+```bash
+    sudo systemctl start mariadb
+```
 
-> `php artisan migrate:fresh --seed`
+```bash
+    php artisan migrate:fresh --seed
+```
 
-<h4>Run `php artisan serve` inside `ecommerce-laravel` directory<h4>
+```bash
+    php artisan serve
+```
 
-<h4>Open the link <http://127.0.0.1:8000></h4>
+```bash
+    firefox http://127.0.0.1:8000
+```
 
 <h2 align="center">Form Validation</h2>
 
@@ -146,7 +172,7 @@ Para utilização de mensagens não genéricas, pode-se usar uma chave com o nom
 
 Para criação de mensagens abaixo do campo com erro / sucesso, o Laravel possui, dentro do objeto $errors, um método chamado `has()`, em que é passado o name, sendo retornado um booleano indicando se aquele campo contém erros.
 
-<h2>Helpers</h2>
+<h2 align="center">Helpers</h2>
 
 Para realizar a criação de um arquivo helper, criaremos um arquivo chamado `Html.php`, dentro do diretório `app/Helpers`.
 
@@ -160,7 +186,7 @@ No arquivo `composer.json`, inserir o código abaixo dentro da chave autoload e 
 
 Adicionar, no diretório config, no arquivo app.php, em aliases, a linha `'Helper' => App\Helpers\Helper::class`
 
-<h2>Models</h2>
+<h2 align="center">Models</h2>
 
 <h3>Configuração do Banco de Dados e das Migrações</h3>
 
@@ -321,11 +347,9 @@ Excluir um registro de id igual a 3 com SoftDelete
 
     Color::find(5)->forceDelete();
 
-<h2>Views</h2>
+<h2 align="center">Views (Blade)</h2>
 
-<h3>Blade</h3>
-
-<h4>Condicional</h4>
+<h3>Condicional</h3>
 
 ```
     @if
@@ -335,7 +359,7 @@ Excluir um registro de id igual a 3 com SoftDelete
     @endif
 ```
 
-<h4>Foreach</h4>
+<h3>Foreach</h3>
 
 ```
     @foreach
@@ -355,7 +379,7 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
     @endfor
 ```
 
-<h4>Vazio</h4>
+<h3>Vazio</h3>
 
 ```
     @empty
