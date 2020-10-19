@@ -381,6 +381,16 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
     @endsection('<string>')
 ```
 
+<h2 align="center">GIT</h2>
+
+```
+    story/102030-some-user-history-message
+    
+    hotfix/103031-some-hotfix-message
+
+    bugfix/102032-some-bugfix-message
+```
+
 ## TODO - Version 1.0
 
 👹 `Implementar a rotina de alteração de senha dentro do sistema.`
