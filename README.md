@@ -198,6 +198,54 @@ No arquivo `composer.json`, inserir o código abaixo dentro da chave autoload e 
 
 Adicionar, no diretório config, no arquivo app.php, em aliases, a linha `'Helper' => App\Helpers\Helper::class`
 
+<h2 align="center">Routes</h2>
+
+Listando todas as rotas do meu projeto
+
+```bash
+    php artisan route:list
+```
+
+Criamos, nesse exemplo, uma rota para a marca em que é passada uma descrição e um valor e essa retorna a impressão dessa descrição tantas vezes.
+
+É realiza uma validação para o nome, sendo permitido apenas caracteres alfanuméricos; e para o número, sendo apenas naturais.
+
+```bash
+    http://127.0.0.1:8000/app/Marca/Lat1ex/5
+```
+
+```bash
+    Route::get('/Marca/{name?}/{n}', function (string $name = '', int $n = 0) {
+        for ($i = 0; $i < $n; $i++) {
+            echo "<p>Marca: {$name}</p>";
+        }
+    })->where('name', '[A-Za-z\d]+')->where('n', '[0-9]+')->name('app.marca');
+```
+
+Redirecionada para a rota nomeada `app` (Name)
+
+```bash
+    return redirect()->route('app');
+```
+
+Redireciona para ação `\app` (URI)
+
+```bash
+    return redirect('/app');
+```
+
+Documentação oficial
+
+<https://laravel.com/docs/master/routing>
+
+Testando uma requisição POST:
+
+Adicionar a rota POST à lista de exceções da classe VerifyCsrfToken.
+
+Através do RestClient, solicitar a url desejada. Por exemplo, <http://127.0.0.1:8000/exit>.
+  
+[Unicode Special Character](http://niviotec.blogspot.com/2015/12/codigos-unicode-para-caracteres.html)
+
 <h2 align="center">Models</h2>
 
 <h3>Configuração do Banco de Dados e das Migrações</h3>
