@@ -24,17 +24,25 @@
 
 🔏 Installing Apache
 
-   `sudo pacman -S apache`
+```bash
+    sudo pacman -S apache
+```
 
 🔏  Installation of tools that will be needed later
 
-   `sudo pacman -S curl git unzip`
+```bash
+    sudo pacman -S curl git unzip
+```
 
 🔏  Installing Composer
 
-   `sudo su`
+```bash
+    sudo su
+```
 
-   `curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer`
+```bash
+    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+```
 
 🔏  Installing the  <a href="https://addons.mozilla.org/pt-BR/firefox/addon/restclient">👉 RESTClient 👈</a> extension
 
@@ -428,6 +436,24 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
 
     bugfix/102032-some-bugfix-message
 ```
+
+<h2 align="center">Upgrade Laravel App</h2>
+
+* [ ] `CRIAR O DIRETÓRIO / NAMESPACE UTILS`
+
+* [ ] `CRIAÇÃO DOS MODELS`
+
+* [ ] `REFAZER AS MIGRAÇÕES E AS SEEDERS`
+
+* [ ] `CRIAÇÃO DAS ROTAS E MIDDLEWARES`
+
+* [ ] `CRIAÇÃO DAS VIEWS`
+
+* [ ] `CONFIGURAÇÃO DOS ARQUIVOS NO DIRETÓRIO PUBLIC`
+
+* [ ] `INSERÇÃO DO JAVASCRIPT EM RESOURCES / JS`
+
+* [ ] `NPM INSTALL`
 
 <h2 align="center">TODO - Version 1.0</h2>
 
