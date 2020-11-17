@@ -1,6 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/laravel-logo.png" width="400"></p>
 
-<p align="center">Small study documentation of the PHP <a href="https://laravel.com/">👉 Laravel framework 👈</a>, developing an ecommerce platform.</p>
+<p align="center">Small study documentation of the PHP <a href="https://laravel.com">👉 Laravel framework 👈</a>, developing an ecommerce platform.</p>
 
 <p align="center">
     <a href="#">
@@ -44,9 +44,9 @@
     curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
-🔏  Installing the  <a href="https://addons.mozilla.org/pt-BR/firefox/addon/restclient">👉 RESTClient 👈</a> extension
+🔏 Installing the  <a href="https://addons.mozilla.org/pt-BR/firefox/addon/restclient">👉 RESTClient 👈</a> extension
 
-   🪔 `To test the use of API's and other features within our application, it is recommended to use a tool to perform the request simulation.`
+🪔 `To test the use of API's and other features within our application, it is recommended to use a tool to perform the request simulation.`
 
 <h2 align="center">Starting a new Laravel project</h2>
 
@@ -74,25 +74,25 @@
 
 <h2 align="center">Run the project from the current project</h2>
 
-```
+```bash
     git clone https://github.com/MagicalStrangeQuark/ecommerce-laravel.git
 ```
 
 <h2 align="center">Create and configure the database (MariaDB)</h2>
 
-```bash
+```sql
     CREATE DATABASE laravel
 ```
 
-```bash
+```sql
     CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'P@ssw0rd'
 ```
 
-```bash
+```sql
     GRANT ALL PRIVILEGES ON * . * TO 'laravel'@'localhost'
 ```
 
-```bash
+```sql
     FLUSH PRIVILEGES
 ```
 
@@ -139,7 +139,7 @@
 No objeto request é possível acessar o método validate, bastando inserir um array associativo com a chave contendo o name do campo e o valor required, sendo
 validado se existe conteúdo. No exemplo abaixo, estamos verificando se o campo color foi informado:
 
-```
+```php
     $request->validate([
         "color" => "required"
     ]);
@@ -147,7 +147,7 @@ validado se existe conteúdo. No exemplo abaixo, estamos verificando se o campo 
 
 Para inserir mais validações simultaneamente, basta concatenar usando o pipe. No exemplo abaixo, não queremos mais de 10 caracteres no mesmo campo color.
 
-```
+```php
     $request->validate([
         "color" => "required|max:10"
     ]);
@@ -155,7 +155,7 @@ Para inserir mais validações simultaneamente, basta concatenar usando o pipe. 
 
 Para validação única, basta informar `unique:<nome-da-tabela>`, para o campo desejado, o seguinte exemplo pode ser útil:
 
-```
+```php
     $request->validate([
         "color" => "required|unique:colors",
         "hexadecimal" => "required|min:6|max:6|unique:colors,hexadecimal"
@@ -164,7 +164,7 @@ Para validação única, basta informar `unique:<nome-da-tabela>`, para o campo 
 
 Exemplo de validação de email:
 
-```
+```php
     $request->validate([
         "email" => "required|email",
     ]);
@@ -172,7 +172,7 @@ Exemplo de validação de email:
 
 Para utilização de mensagens não genéricas, pode-se usar uma chave com o nome da validação, com a mensagem, sendo passsado o placeholder `:attribute`. Exemplo:
 
-```
+```php
     $request->validate([
             "color" => "required|unique:colors",
             "hexadecimal" => "required|min:6|max:6|unique:colors"
@@ -190,7 +190,7 @@ Para realizar a criação de um arquivo helper, criaremos um arquivo chamado `Ht
 
 No arquivo `composer.json`, inserir o código abaixo dentro da chave autoload e rodar o comando `composer dump-autoload`.
 
-```
+```php
     "files": [
         "app/Helpers/Html.php"
     ]
@@ -234,7 +234,7 @@ Redireciona para ação `\app` (URI)
     return redirect('/app');
 ```
 
-Documentação oficial
+<h6 align="center">Documentação oficial</h6>
 
 <https://laravel.com/docs/master/routing>
 
@@ -246,11 +246,124 @@ Através do RestClient, solicitar a url desejada. Por exemplo, <http://127.0.0.1
   
 [Unicode Special Character](http://niviotec.blogspot.com/2015/12/codigos-unicode-para-caracteres.html)
 
+<h2 align="center">Controllers</h2>
+
+Criar um controlador para o gerenciamento de marcas dentro do nosso sistema
+
+```php
+    php artisan make:controller MarcaController --resource
+```
+
+O objeto $request possui um método para a exibição do conteúdo que recebemos do formulário
+
+```php
+    $request->all()
+```
+
+<h3 align="center">CSS</h3>
+
+Criarmos um arquivo simple-sidebar.css.
+
+Adicionando CSS ao projeto: Inserir o arquivo .css na pasta public/css
+
+Referenciar o arquivo com o seguinte código:
+
+```html
+    <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
+```
+
+<h3 align="center">Componentes</h3>
+
+Dentro do diretório resources/views, criar uma pasta chamada component.
+
+Criamos o arquivo `list.blade.php` e inserimos um pequeno código html.
+
+```html
+    <div style="border: 1px solid red">
+        <h1>Component</h1>
+        <p align="center"> Lista Component</p>
+    </div>
+```
+
+Assim, chamamos nosso componente da seguinte forma:
+
+```php
+    @component('components.list')
+
+    @endcomponent
+```
+
+É possível passar conteúdo html para o componente, que será armazenado numa variável chamada $slot, da seguinte forma
+
+```php
+    @component('components.list')
+        <h1>Conteúdo html sendo inserido no componente</h1>
+    @endcomponent
+```
+
+O conteúdo é recuperado então da seguinte forma
+
+```html
+    <div style="border: 1px solid red">
+        <h1>Component</h1>
+        <p align="center"> Lista Component</p>
+        <p>{{ $slot }}</p>
+    </div>
+```
+
+Uma segunda forma é passar os parâmetros através de um array associativo.
+
+```php
+    @component('components.list', ['msg' => 'Conteúdo html sendo inserido no componente'])
+
+    @endcomponent
+```
+
+E recuperar o conteúdo através da variável criada a partir do índice.
+
+```html
+    <div style="border: 1px solid red">
+        <h1>Component</h1>
+        <p align="center"> Lista Component</p>
+        <p align="center">{{ $msg }}</p>
+    </div>
+```
+
+Uma terceira forma de usar componentes é através da declaração dos mesmos. Na classe AppServiceProvider, inserimos a declaração do componente, através da sintaxe `Blade::component("<directory>", "<component-name>")` dentro do método boot();
+
+Após isso incluímos a classe, inserindo a declaração `use Illuminate\Support\Facades\Blade`
+
+Na view, chamamos esse componente usando a seguinte sintaxe
+
+```php
+    @<component-name>(['<variable>' => '<string>'])
+
+    @end<component-name>
+```
+
+<h3 align="center">Adicionando Bootstrap 4</h3>
+
+No terminal, no diretório do nosso projeto, rodar os seguintes comandos:
+
+```php
+    composer require laravel/ui
+
+    php artisan ui bootstrap
+
+    npm install && npm run dev
+```
+
+<h4 align="center">FPDF</h4>
+
+```php
+    composer require setasign/fpdf
+```
+
 <h2 align="center">Models</h2>
 
-<h3>Configuração do Banco de Dados e das Migrações</h3>
+<h3 align="center">Configuração do Banco de Dados e das Migrações</h3>
 
-```
+```php
     1. Realizar a instalação do SGBD mysql
 
     2. Habilitar o driver do mysql extension=pdo_mysql
@@ -266,15 +379,19 @@ Através do RestClient, solicitar a url desejada. Por exemplo, <http://127.0.0.1
 
 Criação de uma tabela chamada colors
 
-    `php artisan make:migration create_colors_table`
+```php
+    php artisan make:migration create_colors_table
+```
 
 Adicionar um campo chamado color a uma tabela chamada chemical_elements
 
-    `php artisan make:migration add_color_to_chemical_elements`
+```php
+    php artisan make:migration add_color_to_chemical_elements`
+```
 
 Criação de um relacionamento muitos para muitos
 
-```
+```php
     /**
      * Run the migrations.
      *
@@ -294,7 +411,7 @@ Criação de um relacionamento muitos para muitos
     }
 ```
 
-```
+```php
     /**
      * Reverse the migrations.
      *
@@ -308,48 +425,73 @@ Criação de um relacionamento muitos para muitos
 
 Criação de um modelo para a tabela colors
 
+```php
     php artisan make:model Color
+```
 
 Criação de um registro para a color, através do tinker
 
+```php
     php artisan tinker;
 
     use App\Color;
 
     $colors = Color::create(['color' => 'Black', 'hexadecimal' => '000000']);
+```
 
 Listagem de todos os registros para a color, através do tinker
 
+```php
     use \App\Color;
         
     php Color::all();
+```
 
 Número de registros
 
+```php
     use App\Color;
 
     Color::count();
+```
 
 Select usando where
 
+```php
     use App\Color;
+```
 
+```php
     Color::where('id', '>=', 2)->first();
+```
 
+```php
     Color::where('id', 2)->get();
+```
 
+```php
     Color::whereBetween('id', [1,2])->get();
+```
 
+```php
     Color::whereNotBetween('id', [2, 3])->get();
+```
 
+```php
     Color::whereIn('id', [2, 3])->get();
+```
 
+```php
     Color::whereNotIn('id', [2, 3])->get();
+```
 
+```php
     Color::where('color', 'like', '%k')->get();
+```
 
-> As duas consultas abaixo são equivalentes
+As duas consultas abaixo são equivalentes
 
+```php
     Color::where('color', 'like', 'B%')->orWhere('id', '>=', 7)->get();
 
     Color::where(function($query){$query->where('color', 'like', 'B%')->orWhere('id', '>=', 7);})->get();
@@ -364,14 +506,15 @@ Select usando where
     Color::where('id', '>', '1')->orderBy('color', 'ASC')->get();
 
     Color::where('id', '>', '1')->get()->pluck('id')->sum();
+```
 
 Set Custom Primary Key
 
-    No model, incluir a linha `protected $primaryKey = 'id'`
+No model, incluir a linha `protected $primaryKey = 'id'`
 
 Atualizar um campo
 
-```
+```php
     use App\Color;
 
     $Color = Color::find(2);
@@ -379,7 +522,7 @@ Atualizar um campo
     $Color->save();
 ```
 
-```
+```php
     Color::find(6)->update(['color' => 'Green']);
 ```
 
@@ -391,27 +534,33 @@ Soft Delete
 
 Listar incluive os registros deletados
 
+```php
     use App\Color;
 
     Color::withTrashed->get();
+```
 
 Verificar se um registro em particular, no caso, o id de número 2, está deletado
 
+```php
     use App\Color;
 
     Color::withTrashed()->find(2)->trashed();
+```
 
 Excluir um registro de id igual a 3 com SoftDelete
 
+```php
     use App\Color;
 
     Color::find(5)->forceDelete();
+```
 
 <h2 align="center">Views (Blade)</h2>
 
 <h3>Condicional</h3>
 
-```
+```php
     @if
         <code>
     @else
@@ -421,7 +570,7 @@ Excluir um registro de id igual a 3 com SoftDelete
 
 <h3>Foreach</h3>
 
-```
+```php
     @foreach
         <code>
     @endforeach
@@ -441,7 +590,7 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
 
 <h3>Vazio</h3>
 
-```
+```php
     @empty
         <code>
     @endempty
@@ -451,7 +600,7 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
 
 <h4>Passagem de variáveis como parâmetro</h4>
 
-```
+```php
     @yield('variable')
 
     @section('<variable>', '<string>')
@@ -459,7 +608,7 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
 
 <h4>Passagem de um trecho de código HTML como parâmetro</h4>
 
-```
+```php
     @yield('<string>')
 
     @section('<string>')
@@ -477,7 +626,7 @@ Reference: <https://tutsforweb.com/loop-variable-foreach-blade-laravel/>
 
 <h2 align="center">GIT</h2>
 
-```
+```php
     story/102030-some-user-history-message
     
     hotfix/103031-some-hotfix-message
